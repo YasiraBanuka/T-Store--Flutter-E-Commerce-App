@@ -4,6 +4,7 @@ import 'package:t_store/common/styles/shadows.dart';
 import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
 import 'package:t_store/common/widgets/images/t_rounded_image.dart';
+import 'package:t_store/common/widgets/texts/product_price_text.dart';
 import 'package:t_store/common/widgets/texts/product_title_text.dart';
 import 'package:t_store/utils/constants/colors.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
@@ -19,7 +20,7 @@ class TProductCardVertical extends StatelessWidget {
 
     /// Container with side paddings, color, edges, radius, & shadow
     return GestureDetector(
-      onTap: () {},
+      onTap: () {} ,
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -105,12 +106,9 @@ class TProductCardVertical extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       /// Price
-                      Text(
-                        '\$35.5',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
+                      const TProductPriceText(price: '35.0'),
+
+                      /// Add to Cart Item
                       Container(
                         decoration: const BoxDecoration(
                           color: TColors.dark,
@@ -142,3 +140,4 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
+
