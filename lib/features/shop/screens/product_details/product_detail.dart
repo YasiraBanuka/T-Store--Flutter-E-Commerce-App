@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/common/widgets/texts/section_heading.dart';
@@ -7,6 +8,7 @@ import 'package:t_store/features/shop/screens/product_details/widgets/product_at
 import 'package:t_store/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+import 'package:t_store/features/shop/screens/product_reviews/product_review.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class ProductDetailScreen extends StatelessWidget {
@@ -52,7 +54,8 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Description
-                  const TSectionHeading(title: 'Description', showActionButton: false),
+                  const TSectionHeading(
+                      title: 'Description', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwSections),
                   const ReadMoreText(
                     'This is product description for product here in the screen. This is a demo description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis nulla ante, sed bibendum justo laoreet sed. Etiam nulla enim, consectetur id nulla in, lacinia tempor ipsum.',
@@ -60,8 +63,10 @@ class ProductDetailScreen extends StatelessWidget {
                     trimMode: TrimMode.Line,
                     trimCollapsedText: ' Show more',
                     trimExpandedText: ' Less',
-                    moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    moreStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    lessStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                   ),
 
                   /// -- Reviews
@@ -70,8 +75,12 @@ class ProductDetailScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TSectionHeading(title: 'Reviews(199)', onPressed: () {}, showActionButton: false),
-                      IconButton(onPressed: () {}, icon: const Icon(Iconsax.arrow_right_3, size: 18)),
+                      const TSectionHeading(
+                          title: 'Reviews(199)', showActionButton: false),
+                      IconButton(
+                        icon: const Icon(Iconsax.arrow_right_3, size: 18),
+                        onPressed: () => Get.to(() => const ProductReviewScreen()),
+                      ),
                     ],
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
