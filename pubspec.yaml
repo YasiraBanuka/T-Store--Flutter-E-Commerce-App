@@ -35,6 +35,9 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   capped_progress_indicator: ^0.0.2
 
+  # Firebase
+  firebase_core: ^2.24.2
+
 
   #--------------- ./ PACKAGES END ------------------#
 
