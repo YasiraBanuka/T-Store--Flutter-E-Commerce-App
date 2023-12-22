@@ -5,6 +5,7 @@ import 'package:t_store/data/repositories/authentication/authentication_reposito
 import 'package:t_store/data/repositories/user/user_repository.dart';
 import 'package:t_store/features/authentication/screens/signup/verify_email.dart';
 import 'package:t_store/features/personalization/models/user_model.dart';
+import 'package:t_store/utils/constants/image_strings.dart';
 import 'package:t_store/utils/helpers/network_manager.dart';
 import 'package:t_store/utils/popups/full_screen_loader.dart';
 import 'package:t_store/utils/popups/loaders.dart';
@@ -29,11 +30,11 @@ class SignupController extends GetxController {
   ///  -- SIGN UP
   void signup() async {
     try {
-      // // Start Loading
-      // TFullScreenLoader.openLoadingDialog(
-      //   'We are processing your information...',
-      //   TImages.verifyIllustration,
-      // );
+      // Start Loading
+      TFullScreenLoader.openLoadingDialog(
+        'We are processing your information...',
+        TImages.docerAnimation,
+      );
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -91,7 +92,7 @@ class SignupController extends GetxController {
       );
 
       // Move to Verify Email Screen
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e, stackTrace) {
       // Remove Loader
       TFullScreenLoader.stopLoading();
