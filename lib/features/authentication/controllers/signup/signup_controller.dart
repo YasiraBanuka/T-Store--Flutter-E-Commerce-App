@@ -30,11 +30,11 @@ class SignupController extends GetxController {
   ///  -- SIGN UP
   void signup() async {
     try {
-      // Start Loading
-      TFullScreenLoader.openLoadingDialog(
-        'We are processing your information...',
-        TImages.docerAnimation,
-      );
+      // // Start Loading
+      // TFullScreenLoader.openLoadingDialog(
+      //   'We are processing your information...',
+      //   TImages.docerAnimation,
+      // );
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
